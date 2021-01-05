@@ -10,6 +10,7 @@ set title
 set clipboard+=unnamedplus
 set shellcmdflag=-ic " enable aliases in ! command
 set omnifunc=syntaxcomplete#Complete
+set termguicolors
 filetype plugin on
 
 nnoremap <esc> :noh<return><esc>
@@ -30,7 +31,8 @@ tnoremap <C-v><Esc> <Esc>
 
 call plug#begin('~/.local/share/nvim/plugged')
 Plug 'junegunn/fzf.vim'
-Plug 'junegunn/rainbow_parentheses.vim'
+" Plug 'junegunn/rainbow_parentheses.vim'
+Plug 'luochen1990/rainbow'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
@@ -38,11 +40,13 @@ Plug 'itchyny/lightline.vim'
 Plug 'mattn/emmet-vim'
 Plug 'rstacruz/vim-hyperstyle'
 Plug 'posva/vim-vue'
-Plug 'rafi/awesome-vim-colorschemes'
+Plug 'dracula/vim', { 'as': 'dracula' }
+" Plug 'rafi/awesome-vim-colorschemes'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'preservim/nerdtree'
 Plug 'aserebryakov/vim-todo-lists'
 call plug#end()
 
 colorscheme dracula
-" colorscheme nord
+hi Normal guibg=NONE ctermbg=NONE
+let g:rainbow_active = 1
